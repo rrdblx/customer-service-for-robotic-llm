@@ -1,0 +1,37 @@
+2026-08-25 15:29:32,746 - agent- INFO - vector_store.py:100 - [加载知识库]/Users/bulangxiong/Desktop/agent项目/data/选购指南.txt 内容加载成功
+2026-08-25 15:29:35,349 - agent- INFO - vector_store.py:100 - [加载知识库]/Users/bulangxiong/Desktop/agent项目/data/扫地机器人100问2.txt 内容加载成功
+2026-08-25 15:29:39,084 - agent- INFO - vector_store.py:100 - [加载知识库]/Users/bulangxiong/Desktop/agent项目/data/故障排除.txt 内容加载成功
+2026-08-25 15:29:41,205 - agent- INFO - vector_store.py:100 - [加载知识库]/Users/bulangxiong/Desktop/agent项目/data/扫拖一体机器人100问.txt 内容加载成功
+2026-08-25 15:29:43,518 - agent- INFO - vector_store.py:100 - [加载知识库]/Users/bulangxiong/Desktop/agent项目/data/维护保养.txt 内容加载成功
+2026-08-25 15:29:43,523 - agent- ERROR - vector_store.py:103 - [加载知识库]/Users/bulangxiong/Desktop/agent项目/data/扫地机器人100问.pdf加载失败：`pypdf` package not found, please install it with `pip install pypdf`
+Traceback (most recent call last):
+  File "/Users/bulangxiong/Desktop/agent项目/.venv/lib/python3.13/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 358, in lazy_parse
+    import pypdf
+ModuleNotFoundError: No module named 'pypdf'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/bulangxiong/Desktop/agent项目/rag/vector_store.py", line 82, in load_document
+    documents: list[Document] = get_file_documents(path)
+                                ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/bulangxiong/Desktop/agent项目/rag/vector_store.py", line 64, in get_file_documents
+    return pdf_loader(read_path)
+  File "/Users/bulangxiong/Desktop/agent项目/utils/file_handler.py", line 43, in pdf_loader
+    return PyPDFLoader(filepath,password).load()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/bulangxiong/Desktop/agent项目/.venv/lib/python3.13/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+  File "/Users/bulangxiong/Desktop/agent项目/.venv/lib/python3.13/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/bulangxiong/Desktop/agent项目/.venv/lib/python3.13/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 360, in lazy_parse
+    raise ImportError(
+        "`pypdf` package not found, please install it with `pip install pypdf`"
+    )
+ImportError: `pypdf` package not found, please install it with `pip install pypdf`
+2026-08-25 15:31:09,343 - agent- INFO - vector_store.py:78 - [加载知识库]/Users/bulangxiong/Desktop/agent项目/data/选购指南.txt内容已经存在知识库内，跳过
+2026-08-25 15:31:09,345 - agent- INFO - vector_store.py:78 - [加载知识库]/Users/bulangxiong/Desktop/agent项目/data/扫地机器人100问2.txt内容已经存在知识库内，跳过
+2026-08-25 15:31:09,345 - agent- INFO - vector_store.py:78 - [加载知识库]/Users/bulangxiong/Desktop/agent项目/data/故障排除.txt内容已经存在知识库内，跳过
+2026-08-25 15:31:09,346 - agent- INFO - vector_store.py:78 - [加载知识库]/Users/bulangxiong/Desktop/agent项目/data/扫拖一体机器人100问.txt内容已经存在知识库内，跳过
+2026-08-25 15:31:09,347 - agent- INFO - vector_store.py:78 - [加载知识库]/Users/bulangxiong/Desktop/agent项目/data/维护保养.txt内容已经存在知识库内，跳过
+2026-08-25 15:31:11,895 - agent- INFO - vector_store.py:100 - [加载知识库]/Users/bulangxiong/Desktop/agent项目/data/扫地机器人100问.pdf 内容加载成功
